@@ -1,0 +1,22 @@
+body {
+  background-color: peachpuff;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-transform: lowercase;
+}
+
+.drawing-container {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.square {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border: 1px solid #aaa;
+}

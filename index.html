@@ -8,8 +8,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Etch-a-Sketch</h1>
-    <div class="drawing-container"></div>
+    <header>
+      <h1>Etch-a-Sketch</h1>
+    </header>
+    <main>
+      <div class="drawing-container"></div>
+      <div class="ui-container">
+        <h3>grid size</h3>
+        <div class="slidecontainer">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="16"
+            class="slider"
+            id="myRange"
+          />
+        </div>
+        <button class="grid-toggle">toggle grid</button>
+        <button class="clear-canvas">clear canvas</button>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

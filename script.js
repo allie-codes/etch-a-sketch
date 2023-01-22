@@ -17,6 +17,7 @@ function createBoard(size) {
     singleSquare.classList.add("square");
     singleSquare.addEventListener("mouseenter", () => onChange(singleSquare));
     drawingContainer.appendChild(singleSquare);
+    //if (gridOn) singleSquare.classList.add("grid-on");
   }
 }
 
@@ -35,16 +36,27 @@ function sliderChange() {
     drawingContainer.removeChild(drawingContainer.firstChild);
   }
   createBoard(currentSize);
+  if (gridOn) setGrid();
+}
+
+function setGrid() {
+  console.log("TEST1");
+  let allSquares = document.querySelectorAll(".square");
+  for (square of allSquares) {
+    square.classList.add("grid-on");
+  }
 }
 
 function toggleGrid() {
+  gridOn = !gridOn;
   let allSquares = document.querySelectorAll(".square");
   for (square of allSquares) {
-    gridOn
-      ? square.classList.add("grid-on")
-      : square.classList.remove("grid-on");
+    if (gridOn) {
+      square.classList.add("grid-on");
+    } else {
+      square.classList.remove("grid-on");
+    }
   }
-  gridOn = !gridOn;
 }
 
 function clearCanvas() {
@@ -78,7 +90,7 @@ function init() {
   clearCanvasButton.addEventListener("click", clearCanvas);
   modeToggleButton.addEventListener("click", modeToggle);
   createBoard(currentSize);
-  toggleGrid();
+  setGrid();
 }
 
 init();
